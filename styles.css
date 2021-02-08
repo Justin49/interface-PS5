@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+/* Style du body */
+body {
+
+    font-family: "Poppins";
+    background-image: url("assets/background-img/bg-spider-man.png");
+}
+
+/* Style du header */
+header {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1650px;
+    margin: 0 auto;
+    padding-top: 3em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+/* Style qui s'applique seulement sur la div droite du header */
+header .right {
+
+    display: flex;
+    align-items: center;
+}
+
+/* Style s'appliquant sur le premier élément <a> de la div gauche du header */
+header .left a:nth-child(1) {
+
+    color: white !important;
+
+}
+
+header a {
+
+    color: #adadad;
+    font-size: 2em;
+}
+
+/* Style qui s'applique à tout les <a> de la div gauche */
+header .left a {
+
+    margin-right: 80px;
+}
+
+/* Style qui s'applique à tout les <a> de la div droite */
+header .right a {
+
+    margin-right: 60px;
+}
+
+header .right span {
+
+    font-size: 2em;
+    color: #adadad;
+    margin-left: 20px;
+}
+
+header .right a img {
+
+    border-radius: 50%;
+    margin-top: 5px;
+}
