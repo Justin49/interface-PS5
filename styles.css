@@ -170,7 +170,7 @@ header .right a img {
 /* Style appliqués à la div de l'image central */
 #carousel .selected {
 
-	z-index: 10;
+	z-index: 1;
     left: 215px;
 
 }
@@ -208,4 +208,22 @@ header .right a img {
 	width: 110px;
 }
 
+/* Style du titre à coté de la vignette du jeu */ 
+#carousel .selected section span {
+
+    color: #adadad;
+    font-size: 1.6em;
+    font-weight: 400;
+    margin-left: 5px;
+    position: relative;
+    bottom: 40px;
+
+}
+
+/* Style du titre pour dire que quand on clique sur la vignette central on affiche pas le titre pour les autres jeux */ 
+#carousel :not(.selected) section span {
+
+    display: none;
+
+}
 
