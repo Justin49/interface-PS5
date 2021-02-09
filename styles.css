@@ -15,6 +15,7 @@ body {
 
     font-family: "Poppins";
     background-image: url("assets/background-img/bg-spider-man.png");
+    height: 100%;
 }
 
 /* Style du header */
@@ -66,8 +67,9 @@ header .right a {
 header .right span {
 
     font-size: 2em;
-    color: #adadad;
+    color: white;
     margin-left: 20px;
+    font-weight: 100;
 }
 
 header .right a img {
@@ -75,3 +77,123 @@ header .right a img {
     border-radius: 50%;
     margin-top: 5px;
 }
+
+/* Style du caroussel (vignettes central) */
+#carousel {
+
+    margin-top: 30px;
+	position: relative;
+    height: 200px;
+}
+
+/* Style appliqués à toutes les divs du carroussel */
+#carousel div {
+
+	position: absolute;
+    opacity: 1;
+    transition: 0.4s;
+}
+
+/* Style appliqués à toute les images */
+#carousel img {
+
+    width: 175px;
+    border-radius: 30px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+/* Style appliqués aux divs caché à gauche */
+#carousel .hideLeft {
+
+	left: -190px;
+	opacity: 0;
+}
+
+/* Style appliqués aux images des divs caché à gauche */
+#carousel .hideLeft img {
+
+	width: 110px;
+}
+
+/* Style appliqués aux divs caché à droite */
+#carousel .hideRight {
+
+	left: 685px;
+	opacity: 0;
+}
+
+/* Style appliqués aux images des divs caché à droite */
+#carousel .hideRight img {
+
+	width: 110px;
+}
+
+/* Style appliqués à la div d'avant l'image central */
+#carousel .prev {
+
+	z-index: 5;
+	left: 80px;
+}
+
+/* Style appliqués à l'image de la div d'avant l'image central */
+#carousel .prev img {
+
+	width: 110px;
+}
+
+/* Style appliqués à la div deux positions avant l'iamge central */
+#carousel .prevLeftSecond {
+
+	z-index: 4;
+	left: -55px;
+}
+
+/* Style appliqués à l'image de la div deux positions avant l'image cental */
+#carousel .prevLeftSecond img {
+
+	width: 110px;
+}
+
+/* Style appliqués à la div de l'image central */
+#carousel .selected {
+
+	z-index: 10;
+    left: 215px;
+
+}
+
+/* Style appliqué à l'image de la div central */
+#carousel .selected img {
+
+    border: 3px solid transparent;
+    box-shadow: 0px 0px 0px 3px #adadad;
+}
+
+/* Style appliqués à la div d'après l'image central */
+#carousel .next {
+
+	z-index: 5;
+	left: 415px;
+}
+
+/* Style appliqués à l'image de la div d'après l'image central */
+#carousel .next img {
+
+	width: 110px;
+}
+
+/* Style appliqués à la div deux positions après l'iamge central */
+#carousel .nextRightSecond {
+
+	z-index: 4;
+	left: 550px;
+}
+
+/* Style appliqués à l'iamge de la div deux positions après l'image central */
+#carousel .nextRightSecond img {
+
+	width: 110px;
+}
+
+
