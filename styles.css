@@ -13,9 +13,21 @@
 /* Style du body */
 body {
 
+    position: relative;
     font-family: "Poppins";
     background-image: url("assets/background-img/bg-spider-man.png");
+    width: 100%;
     height: 100%;
+
+}
+/* Style du body avant que le body se charge, pour mettre le fond au second plan et le menu au premier plan */
+body::before {
+    content: "";
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.45);
+    z-index: -1;
 }
 
 /* Style du header */
