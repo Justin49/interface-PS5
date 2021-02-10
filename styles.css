@@ -99,15 +99,15 @@ header .right a img {
 }
 
 /* Style appliqués à toutes les divs du carroussel */
-#carousel div {
+#carousel > div {
 
 	position: absolute;
     opacity: 1;
-    transition: 0.4s;
+    transition: transform 0.4s, left 0.4s, opacity 0.4s, z-index 0s;
 }
 
 /* Style appliqués à toute les images */
-#carousel img {
+#carousel section img {
 
     width: 175px;
     border-radius: 30px;
@@ -172,15 +172,22 @@ header .right a img {
 
 	z-index: 1;
     left: 215px;
+    height: 500px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
 }
 
 /* Style appliqué à l'image de la div central */
+/*
 #carousel .selected img {
 
     border: 3px solid transparent;
     box-shadow: 0px 0px 0px 3px #adadad;
 }
+*/
 
 /* Style appliqués à la div d'après l'image central */
 #carousel .next {
@@ -213,17 +220,220 @@ header .right a img {
 
     color: #adadad;
     font-size: 1.6em;
-    font-weight: 400;
+    font-weight: 500;
     margin-left: 5px;
     position: relative;
     bottom: 40px;
 
 }
 
-/* Style du titre pour dire que quand on clique sur la vignette central on affiche pas le titre pour les autres jeux */ 
-#carousel :not(.selected) section span {
+/* Style du titre pour dire que quand on clique sur la vignette central on affiche pas le titre pour les autres jeux, ainsi que le logo du jeu en bas */ 
+#carousel :not(.selected) section span,
+#caroussel :not(.selected) .game-info {
 
     display: none;
 
 }
+
+/* Style appliqués sur la div comprenant les divs parti gauche et droite quand on clique sur la vignette que l'on a sélectionné */
+#carousel .selected .game-info {
+
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+/* Style appliqué seulment au bouton de gauche */
+#carousel .selected .game-info .left-game-info .button-left {
+
+    display: flex;
+
+}
+
+/* Style appliqués au titre de la partie gauche de la div dont fait parti la div sélectionner */
+#carousel .selected .game-info .left-game-info h1 {
+
+    color: white;
+    font-weight: 400;
+    font-size: 1.5em;
+    margin: 40px 0 40px 0;
+
+}
+
+/* Style appliqués au boutton jouer et au 3 petit point de la partie gauche de la div dont fait parti la div sélectionner */
+#carousel .selected .game-info .left-game-info .button-left a {
+
+    background-color: rgba(255, 255, 255, 0.15);
+    opacity: 0.75;
+    color: white;
+    font-size: 2em;
+    margin-right: 10px;
+    border-radius: 50px;
+
+}
+
+/* Style appliqué seulement au premier enfant de .button-left, soit le premier a  */
+#carousel .selected .game-info .left-game-info .button-left a:nth-child(1) {
+
+    padding: 10px 120px;
+}
+
+/* Style appliqué seulement au deuxième enfant de .button-left, soit le deuxième a  */
+#carousel .selected .game-info .left-game-info .button-left a:nth-child(2) {
+
+    height: 65px;
+    width: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Style appliqué à la div cover de la partie droite dont fait parti la div sélectionner */
+#carousel .selected .game-info .right-game-info .cover {
+
+    height: 300px;
+    width: 300px;
+    background-image: url("assets/thumbnail/game-thumbnail-spider-man.png");
+    display: flex;
+    background-size: cover;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    z-index: 0;
+
+}
+
+/* Style appliqués à la div cover pour mettre en avant le dégrader */
+#carousel .selected .game-info .right-game-info .cover::before {
+
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background: linear-gradient(to bottom, transparent 35%, black 80%) 
+
+}
+
+/* Style appliqué sur les span du cover pour les mettres plus en avant au-dessus du dégrader */
+#carousel .selected .game-info .right-game-info .cover span {
+
+    z-index: 1;
+    color: white;
+    
+}
+
+/* Style appliqués au span qui à la classe complet */
+#carousel .selected .game-info .right-game-info .cover span.complet {
+
+    border: 2px solid;
+    width: fit-content;
+    padding: 2px 8px;
+    margin-left: 17px;
+}
+
+/* Style appliqués au span ayant la classe price */
+#carousel .selected .game-info .right-game-info .cover span.price {
+
+    margin-left: 17px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+
+}
+
+#carousel .selected#dirt5-game .right-game-info .cover {
+
+   background-image: url("assets/thumbnail/game-thumbnail-dirt-5.png");
+    
+}
+
+#carousel .selected#demons-game .right-game-info .cover {
+
+    background-image: url("assets/thumbnail/game-thumbnail-demons-souls.png");
+     
+}
+
+#carousel .selected#yakuza-game .right-game-info .cover {
+
+    background-image: url("assets/thumbnail/game-thumbnail-yakuza.png");
+     
+}
+
+#carousel .selected#sackboy-game .right-game-info .cover {
+
+    background-image: url("assets/thumbnail/game-thumbnail-sackboy.png");
+     
+}
+
+#carousel .selected#XIII-game .right-game-info .cover {
+
+    background-image: url("assets/thumbnail/game-thumbnail-XIII.png");
+     
+}
+
+#carousel .selected#watch-dogs-game .right-game-info .cover {
+
+    background-image: url("assets/thumbnail/game-thumbnail-watch-dogs.png");
+     
+}
+
+/* Style appliqués sur la div contenant les informations sur les trophés d'un jeu */
+#carousel .selected .game-info .right-game-info .trophy {
+
+    width: 300px;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.55);
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+/* Style appliqués à l'icone du trophé */
+#carousel .selected .game-info .right-game-info .trophy i {
+
+    color: #acacac;
+    font-size: 2.5em;
+}
+
+/* Style appliqués à toute les divs enfants de .trophy */
+#carousel .selected .game-info .right-game-info .trophy div {
+
+    display: flex;
+    flex-direction: column;
+   
+}
+
+/* Style appliqués aux premiers enfants span des divs .progress et .win */
+#carousel .selected .game-info .right-game-info .trophy .progress span:nth-child(1),
+#caroussel .selected .game-info .right-game-info .trophy .win span:nth-child(1) {
+
+    color: rgb(177, 177, 177);
+}
+
+/* Style appliqués aux deuxièmes enfants span des divs .progress et .win */
+#carousel .selected .game-info .right-game-info .trophy .progress span:nth-child(2),
+#caroussel .selected .game-info .right-game-info .trophy .win span:nth-child(2) {
+
+    color: white;
+    font-size: 1.8em;
+    font-weight: 300;
+}
+
+/* Style appliqué au deuxième enfant span de la div .win */
+#caroussel .selected .game-info .right-game-info .trophy .win span:nth-child(2) {
+
+    text-align: right;
+}
+
+
+
+
+
+
+
+
+
 

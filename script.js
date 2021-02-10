@@ -42,7 +42,7 @@ function moveToSelected(element) {
       e.preventDefault();
   });
   
-  $('#carousel div').click(function() {
+  $('#carousel > div').click(function() {
     moveToSelected($(this));
   });
   
